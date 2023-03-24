@@ -40,6 +40,8 @@ public class TranslateService {
         try {
 
             logger.info("Start inserting into DB");
+            System.out.println(requestDTO);
+            System.out.println(responseDTO);
             requestService.save(requestDTO, responseDTO);
 
             logger.info("Success!");

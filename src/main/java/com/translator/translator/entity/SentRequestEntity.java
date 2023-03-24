@@ -19,7 +19,9 @@ public class SentRequestEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
+    @Column(columnDefinition = "text")
     String inputData;
+    @Column(columnDefinition = "text")
     String outputData;
 
     Timestamp dateTime;
