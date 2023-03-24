@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "translatedWords")
 public class TranslatedWordsEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,6 +19,7 @@ public class TranslatedWordsEntity {
     String translatedWord;
 
     @ManyToOne(targetEntity = SentRequestEntity.class, fetch = FetchType.LAZY)
+    @JoinColumn(name = "requestId")
     SentRequestEntity requestID;
 
 }

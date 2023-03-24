@@ -15,6 +15,7 @@ import java.util.List;
 public class RequestYandexDTO {
     String sourceLanguageCode;
     String targetLanguageCode;
+
     List<String> texts = new ArrayList<>();
 
 }

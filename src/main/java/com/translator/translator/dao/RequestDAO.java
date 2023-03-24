@@ -1,21 +1,21 @@
-package com.translator.translator.db.dao;
+package com.translator.translator.dao;
 
 import com.translator.translator.entity.SentRequestEntity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.Statement;
 
 @Component
 public class RequestDAO {
 
-    @Autowired
+
     private final TranslatedWordsDAO translatedWordsDAO;
     private final JdbcTemplate jdbcTemplate;
 
@@ -25,13 +25,15 @@ public class RequestDAO {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+    @Transactional(rollbackFor = RuntimeException.class)
+    public void save(SentRequestEntity requestEntity) throws DataAccessException{
 
-    public void save(SentRequestEntity requestEntity){
         KeyHolder keyHolder = new GeneratedKeyHolder();
+
         jdbcTemplate.update(
                 connection -> {
                     PreparedStatement ps =
-                            connection.prepareStatement("INSERT INTO request(id,inputData,outputData,dateTime,parameters,ipAddress) VALUES (1, ?, ?, ?, ?, ?)");
+                            connection.prepareStatement("INSERT INTO request(input_Data,output_Data,date_Time,parameters,ip_Address) VALUES (?, ?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
 
                     ps.setString(1,requestEntity.getInputData());
                     ps.setString(2,requestEntity.getOutputData());
@@ -40,8 +42,14 @@ public class RequestDAO {
                     ps.setString(5,requestEntity.getIpAddress());
                     return ps;
                 },
-                keyHolder);
-        Long requestId = keyHolder.getKey().longValue();
-        translatedWordsDAO.save(requestEntity, requestId);
+                keyHolder) ;
+
+        if(keyHolder.getKey() != null){
+            Long requestId = keyHolder.getKey().longValue();
+            translatedWordsDAO.save(requestEntity, requestId);
+        }else{
+            throw new DataAccessException("Something is wrong with inserting the request") {};
+        }
+
     }
 }
