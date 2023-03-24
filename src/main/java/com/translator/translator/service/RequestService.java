@@ -1,6 +1,5 @@
 package com.translator.translator.service;
 
-import com.translator.translator.dao.RequestDAO;
 import com.translator.translator.dto.RequestDTO;
 import com.translator.translator.dto.ResponseDTO;
 import com.translator.translator.entity.SentRequestEntity;
@@ -14,7 +13,8 @@ import java.util.Date;
 @Service
 @AllArgsConstructor
 public class RequestService {
-    private RequestDAO requestDAO;
+    private SentRequestService sentRequestService;
+
     public void save(RequestDTO requestDTO, ResponseDTO responseDTO) throws DataAccessException {
         SentRequestEntity request = SentRequestEntity.builder()
                 .inputData(requestDTO.getInputString())
@@ -23,6 +23,6 @@ public class RequestService {
                 .ipAddress(requestDTO.getRequest().getRemoteAddr())
                 .outputData(responseDTO.getTranslatedText())
                 .build();
-        requestDAO.save(request);
+        sentRequestService.save(request);
     }
 }

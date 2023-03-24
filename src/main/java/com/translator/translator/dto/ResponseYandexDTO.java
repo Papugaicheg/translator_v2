@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -14,5 +13,5 @@ import java.util.Map;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ResponseYandexDTO {
-    List<Map<String,String>> translations = new ArrayList<>();
+    List<Map<String, String>> translations = new ArrayList<>();
 }

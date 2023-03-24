@@ -9,13 +9,10 @@ public class ResponseMapperImpl implements ResponseMapper {
     public ResponseDTO toDTOFromYandex(ResponseYandexDTO responseYandexDTO) {
 
         StringBuilder builder = new StringBuilder();
-        responseYandexDTO.getTranslations().forEach(c->builder.append(c.get("text")).append(" "));
+        responseYandexDTO.getTranslations().forEach(c -> builder.append(c.get("text")).append(" "));
 
         return new ResponseDTO(builder.toString().trim());
     }
-
-
-
 
 
 }
