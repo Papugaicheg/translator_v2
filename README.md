@@ -18,12 +18,12 @@ mvn clean package
 
 3. Запустите процесс создания образа
 ```sh 
-docker build -f Dockerfile -t app .
+docker build -f Dockerfile -t translator_v2 .
 ```
 
 4. Запустите новый контейнер 
 ```sh 
- docker run -p 8080:8080 app
+ docker run -p 8080:8080 translator_v2
 ```
 
 ## Входные данные
