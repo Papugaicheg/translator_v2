@@ -1,13 +1,12 @@
 package com.translator.translator.config;
 
-import org.springframework.boot.web.client.RestTemplateBuilder;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
-import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import javax.sql.DataSource;
@@ -15,7 +14,7 @@ import javax.sql.DataSource;
 @Configuration
 @ComponentScan("com.translator.translator")
 @EnableWebMvc
-public class SpringConfig {
+public class JdbcConfig {
     @Bean
     public DataSource dataSource() {
         return new EmbeddedDatabaseBuilder()
@@ -23,16 +22,8 @@ public class SpringConfig {
                 .setName("translator")
                 .build();
     }
-
     @Bean
     public JdbcTemplate jdbcTemplate() {
         return new JdbcTemplate(dataSource());
     }
-
-    @Bean
-    public RestTemplate restTemplate(RestTemplateBuilder builder) {
-        return builder.build();
-    }
-
-
 }
