@@ -5,13 +5,13 @@ import com.translator.translator.entity.SentRequestEntity;
 import lombok.AllArgsConstructor;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.IntStream;
 
-@Component
+@Service
 @AllArgsConstructor
 public class TranslatedWordsService {
 

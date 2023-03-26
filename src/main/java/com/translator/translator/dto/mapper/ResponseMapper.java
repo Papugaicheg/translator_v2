@@ -2,8 +2,8 @@ package com.translator.translator.dto.mapper;
 
 
 import com.translator.translator.dto.ResponseDTO;
-import com.translator.translator.dto.ResponseYandexDTO;
+import com.translator.translator.dto.ResponseFromYandexDTO;
 
 public interface ResponseMapper {
-    ResponseDTO toDTOFromYandex(ResponseYandexDTO responseYandexDTO);
+    ResponseDTO toDTOFromYandex(ResponseFromYandexDTO responseFromYandexDTO);
 }
