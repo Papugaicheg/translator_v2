@@ -1,8 +1,8 @@
 package com.translator.translator.dto.mapper.impl;
 
 import com.translator.translator.dto.RequestDTO;
-import com.translator.translator.dto.RequestToYandexDTO;
 import com.translator.translator.dto.mapper.RequestMapper;
+import com.translator.translator.dto.yandexAPI.RequestToYandexDTO;
 
 import java.util.List;
 

@@ -1,8 +1,8 @@
 package com.translator.translator.dto.mapper.impl;
 
 import com.translator.translator.dto.ResponseDTO;
-import com.translator.translator.dto.ResponseFromYandexDTO;
 import com.translator.translator.dto.mapper.ResponseMapper;
+import com.translator.translator.dto.yandexAPI.ResponseFromYandexDTO;
 
 public class ResponseMapperImpl implements ResponseMapper {
     @Override

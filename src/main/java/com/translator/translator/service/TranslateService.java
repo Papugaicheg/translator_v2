@@ -2,11 +2,11 @@ package com.translator.translator.service;
 
 
 import com.translator.translator.dto.RequestDTO;
-import com.translator.translator.dto.RequestToYandexDTO;
 import com.translator.translator.dto.ResponseDTO;
-import com.translator.translator.dto.ResponseFromYandexDTO;
 import com.translator.translator.dto.mapper.impl.RequestMapperImpl;
 import com.translator.translator.dto.mapper.impl.ResponseMapperImpl;
+import com.translator.translator.dto.yandexAPI.RequestToYandexDTO;
+import com.translator.translator.dto.yandexAPI.ResponseFromYandexDTO;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DataAccessException;

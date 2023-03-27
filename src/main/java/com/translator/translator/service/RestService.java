@@ -1,7 +1,7 @@
 package com.translator.translator.service;
 
-import com.translator.translator.dto.RequestToYandexDTO;
-import com.translator.translator.dto.ResponseFromYandexDTO;
+import com.translator.translator.dto.yandexAPI.RequestToYandexDTO;
+import com.translator.translator.dto.yandexAPI.ResponseFromYandexDTO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;

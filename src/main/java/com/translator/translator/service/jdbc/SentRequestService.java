@@ -1,4 +1,4 @@
-package com.translator.translator.service;
+package com.translator.translator.service.jdbc;
 
 import com.translator.translator.entity.SentRequestEntity;
 import lombok.AllArgsConstructor;

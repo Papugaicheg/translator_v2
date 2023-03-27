@@ -1,4 +1,4 @@
-package com.translator.translator.dto;
+package com.translator.translator.dto.yandexAPI;
 
 
 import lombok.AllArgsConstructor;

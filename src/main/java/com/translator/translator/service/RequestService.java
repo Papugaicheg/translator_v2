@@ -3,6 +3,7 @@ package com.translator.translator.service;
 import com.translator.translator.dto.RequestDTO;
 import com.translator.translator.dto.ResponseDTO;
 import com.translator.translator.entity.SentRequestEntity;
+import com.translator.translator.service.jdbc.SentRequestService;
 import lombok.AllArgsConstructor;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
