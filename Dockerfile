@@ -13,5 +13,6 @@ WORKDIR translator
 ARG ApiKey
 ENV ApiKey ${ApiKey}
 
+EXPOSE 8080
 COPY --from=build /translator/target/*.jar app.jar
 ENTRYPOINT ["java","-jar","app.jar"]
