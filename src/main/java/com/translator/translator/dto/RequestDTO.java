@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class RequestDTO {
-    String inputString;
-    String translateParameters;
-    HttpServletRequest request;
+    private String inputString;
+    private String translateParameters;
+    private HttpServletRequest request;
 }

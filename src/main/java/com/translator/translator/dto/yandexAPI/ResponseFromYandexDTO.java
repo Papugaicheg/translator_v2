@@ -13,5 +13,5 @@ import java.util.Map;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ResponseFromYandexDTO {
-    List<Map<String, String>> translations = new ArrayList<>();
+    private List<Map<String, String>> translations = new ArrayList<>();
 }

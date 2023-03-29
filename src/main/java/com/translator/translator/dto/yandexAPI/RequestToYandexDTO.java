@@ -13,9 +13,9 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class RequestToYandexDTO {
-    String sourceLanguageCode;
-    String targetLanguageCode;
+    private String sourceLanguageCode;
+    private String targetLanguageCode;
 
-    List<String> texts = new ArrayList<>();
+    private List<String> texts = new ArrayList<>();
 
 }

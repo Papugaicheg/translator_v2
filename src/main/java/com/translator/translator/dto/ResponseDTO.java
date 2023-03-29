@@ -2,7 +2,6 @@ package com.translator.translator.dto;
 
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,5 +10,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 
 public class ResponseDTO {
-    String translatedText;
+    private String translatedText;
 }

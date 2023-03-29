@@ -3,9 +3,11 @@ package com.translator.translator.dto.mapper.impl;
 import com.translator.translator.dto.RequestDTO;
 import com.translator.translator.dto.mapper.RequestMapper;
 import com.translator.translator.dto.yandexAPI.RequestToYandexDTO;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class RequestMapperImpl implements RequestMapper {
     @Override
     public RequestToYandexDTO toYandexRequest(RequestDTO requestDTO) {

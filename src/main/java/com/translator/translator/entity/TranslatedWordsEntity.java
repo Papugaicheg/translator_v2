@@ -14,13 +14,13 @@ import lombok.NoArgsConstructor;
 public class TranslatedWordsEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
-    String word;
-    String translatedWord;
+    private String word;
+    private String translatedWord;
 
     @ManyToOne(targetEntity = SentRequestEntity.class, fetch = FetchType.LAZY)
     @JoinColumn(name = "requestId")
-    SentRequestEntity requestID;
+    private SentRequestEntity requestID;
 
 }

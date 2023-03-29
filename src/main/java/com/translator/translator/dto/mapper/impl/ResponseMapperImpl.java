@@ -3,7 +3,9 @@ package com.translator.translator.dto.mapper.impl;
 import com.translator.translator.dto.ResponseDTO;
 import com.translator.translator.dto.mapper.ResponseMapper;
 import com.translator.translator.dto.yandexAPI.ResponseFromYandexDTO;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ResponseMapperImpl implements ResponseMapper {
     @Override
     public ResponseDTO toDTOFromYandex(ResponseFromYandexDTO responseFromYandexDTO) {

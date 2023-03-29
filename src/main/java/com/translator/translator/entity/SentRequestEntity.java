@@ -17,14 +17,14 @@ import java.sql.Timestamp;
 public class SentRequestEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
     @Column(columnDefinition = "text")
-    String inputData;
+    private String inputData;
     @Column(columnDefinition = "text")
-    String outputData;
+    private String outputData;
 
-    Timestamp dateTime;
-    String parameters;
-    String ipAddress;
+    private Timestamp dateTime;
+    private String parameters;
+    private String ipAddress;
 }

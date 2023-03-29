@@ -20,10 +20,15 @@ public class TranslateService {
     private final RestService restService;
     private final RequestService requestService;
 
+
+
+    private final RequestMapperImpl requestMapper;
+    private final ResponseMapperImpl responseMapper;
+
     public ResponseDTO translate(RequestDTO requestDTO) {
 
         log.info("Start conversation RequestDTO into RequestYandexDTO ");
-        RequestToYandexDTO requestToYandex = new RequestMapperImpl().toYandexRequest(requestDTO);
+        RequestToYandexDTO requestToYandex = requestMapper.toYandexRequest(requestDTO);
 
         log.info("Sending a request to YandexAPI");
         ResponseFromYandexDTO responseFromYandexDTO = restService.getTranslate(requestToYandex);
@@ -33,7 +38,7 @@ public class TranslateService {
         }
 
         log.info("Start conversation ResponseYandexDTO into ResponseDTO");
-        ResponseDTO responseDTO = new ResponseMapperImpl().toDTOFromYandex(responseFromYandexDTO);
+        ResponseDTO responseDTO = responseMapper.toDTOFromYandex(responseFromYandexDTO);
 
         try {
 
