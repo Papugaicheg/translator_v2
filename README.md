@@ -10,18 +10,13 @@
 ```sh 
 git clone https://github.com/Papugaicheg/translator_v2
 ```
-   
-2. Выполните компиляцию кода и упаковку в jar-файл
+
+2. Запустите процесс изображения
 ```sh 
-mvn clean package
+docker build  --build-arg ApiKey=<IAM-token> -t translator .
 ```
 
-3. Запустите процесс создания образа
-```sh 
-docker build -f Dockerfile -t translator_v2 .
-```
-
-4. Запустите новый контейнер 
+3. Запустите новый контейнер 
 ```sh 
  docker run -p 8080:8080 translator_v2
 ```

@@ -1,4 +1,17 @@
+
+FROM openjdk:17-jdk-alpine as build
+WORKDIR translator
+COPY mvnw .
+COPY .mvn .mvn
+COPY pom.xml .
+COPY src src
+ARG ApiKey
+RUN ./mvnw -DApiKey=${ApiKey} clean package
+
 FROM openjdk:17-jdk-alpine
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+WORKDIR translator
+ARG ApiKey
+ENV ApiKey ${ApiKey}
+
+COPY --from=build /translator/target/*.jar app.jar
+ENTRYPOINT ["java","-jar","app.jar"]

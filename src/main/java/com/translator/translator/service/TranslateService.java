@@ -20,8 +20,6 @@ public class TranslateService {
     private final RestService restService;
     private final RequestService requestService;
 
-
-
     private final RequestMapperImpl requestMapper;
     private final ResponseMapperImpl responseMapper;
 
